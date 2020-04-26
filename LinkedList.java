@@ -35,12 +35,21 @@ public class LinkedList{
             return list;
         }
 
-            while(current_node!=null | current_node.data!=key){
-                current_node=current_node.next;
-
-
+        while(current_node!=null | current_node.data!=key){
+            previous=current_node;
+            current_node=current_node.next;
             }
-            return list;
+        if (current_node!=null){
+            previous.next=current_node.next;
+            
+        }
+        if (current_node==null){
+            System.out.println("Not found");
+            
+        }
+
+        return list;
+
         }
         
     
