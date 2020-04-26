@@ -28,9 +28,10 @@ public class LinkedList{
         return list;
     }
 
-
-    
-
+    public static LinkedList remove(LinkedList list,int key){
+        
+        return list;
+    }
     
 public static void main(String[] args){
     LinkedList list = new LinkedList();
