@@ -29,13 +29,25 @@ public class LinkedList{
     }
 
     public static LinkedList remove(LinkedList list,int key){
+        Node current_node=list.head, previous=null;
+        if (current_node!=null & current_node.data==key){
+            list.head=current_node.next;
+            return list;
+        }
+
+            while(current_node!=null | current_node.data!=key){
+                current_node=current_node.next;
+
+
+            }
+            return list;
+        }
         
-        return list;
-    }
     
 public static void main(String[] args){
     LinkedList list = new LinkedList();
     list=insert(list,5);
+    list=remove(list,5);
 
 }
 
