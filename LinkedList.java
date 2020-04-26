@@ -5,11 +5,12 @@ public class LinkedList{
         int data;
         Node next;
 
-       Node(final int d){
+       Node(int d){
            data=d;
        }
+    }
     public static LinkedList insert(LinkedList list,int data){
-        final Node new_node= new Node(data);
+        Node new_node= new Node(data);
         new_node.next=null;
         if (head==null){
             head=new_node;
@@ -28,12 +29,12 @@ public class LinkedList{
     }
 
 
-    }
+    
 
     
-public static void main(final String[] args){
-    LinkedList a = new LinkedList();
-    
+public static void main(String[] args){
+    LinkedList list = new LinkedList();
+    list=insert(list,5);
 
 }
 
