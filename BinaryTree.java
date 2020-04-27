@@ -7,32 +7,35 @@ class BinaryTree{
 
         Node(int value){
             this.value=value;
+            left=null;
+            right=null;
         }
     }
 
-    public static void Insert(Node node, int value){
+    public static void Insert(Node root, int value){
 
-        if (node==null){
-            Node new_node=new Node(value);
+        if (root==null){
+          root=new Node(value);
         }
         
-       else if (value<new_node.value){
-            if (node.left!=null){
-                Insert(node.left,value);
+       else if (value<root.value){
+            if (root.left!=null){
+                Insert(root.left,value);
             
             }
             else{
-                node.left=new Node(value);
+                root.left=new Node(value);
             }
             }
 
-        else if (value>node.value){
-            if (node.right!=null){
-                Insert(node.right,value);
+        else if (value>root.value){
+            if (root.right!=null){
+                Insert(root.right,value);
             }
             else{
-                node.right=new Node(value);
+                root.right=new Node(value);
             }
+
         }
 
         }
@@ -40,6 +43,7 @@ class BinaryTree{
     
         public static void main(String[] args){
             BinaryTree tree= new BinaryTree();
-            tree.insert(new_node,5);
+            Node node=new Node(5);
+            tree.Insert(node,5);
         }
     }
