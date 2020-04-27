@@ -45,19 +45,28 @@ public class LinkedList{
         }
         if (current_node==null){
             System.out.println("Not found");
-            
         }
 
         return list;
 
         }
+        public static LinkedList Display(LinkedList list){
+
+            Node current=list.head;
+            while(current!=null){
+                System.out.println(current.data);
+                current=current.next;
+
+            }
+
+            return list;
+        }
         
-    
 public static void main(String[] args){
     LinkedList list = new LinkedList();
     list=insert(list,5);
+    list.Display(list);
     list=remove(list,5);
-
 }
 
 }
