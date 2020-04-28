@@ -1,49 +1,47 @@
 class BinaryTree{
-    Node node;
-    static class Node{
-        int value;
-        Node left;
-        Node right;
-
-        Node(int value){
-            this.value=value;
-            left=null;
-            right=null;
-        }
-    }
-
-    public static void Insert(Node root, int value){
-
-        if (root==null){
-          root=new Node(value);
+    Node root;
+    
+    public Node Insert(Node current, int value){
+        if (current==null){
+         return new Node(value);
         }
         
        else if (value<root.value){
-            if (root.left!=null){
-                Insert(root.left,value);
-            
-            }
-            else{
-                root.left=new Node(value);
-            }
+        current.left=Insert(current.left,value);
             }
 
         else if (value>root.value){
-            if (root.right!=null){
-                Insert(root.right,value);
+            current.right=Insert(current.right,value);
             }
-            else{
-                root.right=new Node(value);
-            }
-
+        else{
+            return current;
         }
 
-        }
+        return current;
 
-    
-        public static void main(String[] args){
-            BinaryTree tree= new BinaryTree();
-            Node node=new Node(5);
-            tree.Insert(node,5);
         }
+       
+    public void add(int value){
+        root=Insert(root,value);
     }
+    public static void main(String[] args){
+        BinaryTree tree= new BinaryTree();
+        tree.add(5);
+        tree.add(6);
+    }
+        }
+
+class Node{
+    int value;
+    Node left;
+    Node right;
+    
+    Node(int value){
+      this.value=value;
+      this.left=null;
+      this.right=null;
+        }
+       
+        }
+    
+      
