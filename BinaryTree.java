@@ -37,15 +37,36 @@ class BinaryTree{
         return ContainsElement(root,value);
     }
 
-    public void InOrder(Node current){
-        
+    public void PreOrderRecursive(Node current){
+        if (current!=null){
+        System.out.println(current.value);
+        PreOrderRecursive(current.left);
+        PreOrderRecursive(current.right);
+        }
+    }
 
+    public void InOrderRecursive(Node current){
+        if (current!=null){
+            InOrderRecursive(current.left);
+            System.out.println(current.value);
+            InOrderRecursive(current.right);
+        }
+    }
+
+    public void PostOrderRecursive(Node current){
+        if (current!=null){
+            PostOrderRecursive(current.left);
+            PostOrderRecursive(current.right);
+            System.out.println(current.value);
+            
+        }
     }
     public static void main(String[] args){
         BinaryTree tree= new BinaryTree();
         tree.add(5);
         tree.add(6);
         tree.HasElement(5);
+        tree.PreOrderRecursive(tree.root);
     }
         }
 
