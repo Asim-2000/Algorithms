@@ -36,6 +36,11 @@ class BinaryTree{
     public boolean HasElement (int value){
         return ContainsElement(root,value);
     }
+
+    public void InOrder(Node current){
+        
+
+    }
     public static void main(String[] args){
         BinaryTree tree= new BinaryTree();
         tree.add(5);
