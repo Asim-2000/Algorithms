@@ -67,6 +67,8 @@ class BinaryTree{
         tree.add(6);
         tree.HasElement(5);
         tree.PreOrderRecursive(tree.root);
+        tree.InOrderRecursive(tree.root);
+        tree.PostOrderRecursive(tree.root);
     }
         }
 
