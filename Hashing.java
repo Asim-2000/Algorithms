@@ -46,8 +46,34 @@ class Map <K,V>{
         
         HashNode<K,V> head =bucketArray.get(bucketIndex);
 
+        HashNode<K,V> prev =null;
+        // iterate through the array list of buckets untill we reach the end of list 
+        while (head!=null){
+            if (head.key.equals(key)){
+                break;
+            }
+            prev=head;
+            head=head.next;
+            }
         
+        if (head==null){return null;}
+
+        size--;
+        // if previous node is not null then we will point the previous node to the node on the next of head. 
+        if (prev!=null){
+            prev.next=head.next;
+        }
+
+        //else we will replace the object i.e node at the bucketIndex with the objcet at the next position.
+        else{
+            bucketArray.set(bucketIndex,head.next);
+        }
+        
+        return head.value;
+
+
+
+        }        
 
     }
 
-}
