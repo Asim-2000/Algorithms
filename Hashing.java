@@ -124,10 +124,28 @@ class Map <K,V>{
             //Now the placeholder of the first node the list of hashnodes is the new node//
             bucketArray.set(bucketIndex,newNode);
 
-
+            //if the load factor i.e (total size of hashmap/ number of buckets in hashmap) exceeds 0.75 then//
             if ((size*1.0)/numberofbuckets>0.75){
+                //create a new array list of hashnodes and set it equal to the bucketarray(previous one)//
               ArrayList<HashNode<K,V>> temp = bucketArray;
+              //make a new arraylist in bucket array//
               bucketArray=new ArrayList<>();
+              size=0;
+              //number of bucekts in this new bucketarray is twice now
+              numberofbuckets=2*numberofbuckets;
+              //initialize the buckets with null//
+              for (int i=0;i<numberofbuckets;i++){
+                  bucketArray.add(null);
+              }
+              //For each Node in temp //
+              for (HashNode<K,V> headNode:temp){
+                //then iterating untill we get a null in that list//  
+                while (head!=null){
+                    //adding elements of temp in new hashmap//
+                    add(headNode.key,headNode.value);
+                    headNode=headNode.next;
+                }
+              }
                 }
                 
         }
