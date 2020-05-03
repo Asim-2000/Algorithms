@@ -61,6 +61,10 @@ public class LinkedList{
 
             return list;
         }
+
+        public LinkedList Reverse (LinkedList lsit){
+            
+        }
         
 public static void main(String[] args){
     LinkedList list = new LinkedList();
