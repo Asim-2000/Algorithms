@@ -47,7 +47,16 @@ class Map <K,V>{
     //.get methdo retruns a value for a key. There is a difference between this get methdo and the one we call on the array list it is called on hashmap not array list.//
     // this methdo will be used when we will create a hash map adn then we want a value for a particualr key in O(1) or 0(linkedlist) time//
     public V get(K key){
-
+        
+        int bucketIndex=getBucketIndex(key);
+        HashNode<K,V> head= bucketArray.get(bucketIndex);
+        while (head!=null){
+            if(head.key.equals(key)){
+                return head.value;
+            }
+            head=head.next;
+        }
+        return null;
     }
 
     public V remove(K key){
