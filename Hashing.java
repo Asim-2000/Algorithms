@@ -124,6 +124,12 @@ class Map <K,V>{
             //Now the placeholder of the first node the list of hashnodes is the new node//
             bucketArray.set(bucketIndex,newNode);
 
+
+            if ((size*1.0)/numberofbuckets>0.75){
+              ArrayList<HashNode<K,V>> temp = bucketArray;
+              bucketArray=new ArrayList<>();
+                }
+                
         }
 
 
