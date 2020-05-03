@@ -34,11 +34,13 @@ class Map <K,V>{
             bucketArray.add(null);
         }
     }
-
+    //method size, it returns the size of the hashmap//
     public int size(){return size;}
 
+    // method isEmpty, it tells whether the hashmap is empty or not//
     public boolean isEmpty(){return size()==0;}
 
+    // method getBucketIndex it will accept key give you a random index (0-9) out of number of buckets in the array list as the index//
     private int getBucketIndex(K key){
         int hashCode=key.hashCode();
         int index = hashCode%numberofbuckets;
