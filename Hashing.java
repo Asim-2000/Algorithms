@@ -34,7 +34,7 @@ class Map <K,V>{
             bucketArray.add(null);
         }
     }
-    
+
     public int size(){return size;}
 
     public boolean isEmpty(){return size()==0;}
@@ -43,6 +43,11 @@ class Map <K,V>{
         int hashCode=key.hashCode();
         int index = hashCode%numberofbuckets;
         return index;
+    }
+    //.get methdo retruns a value for a key. There is a difference between this get methdo and the one we call on the array list it is called on hashmap not array list.//
+    // this methdo will be used when we will create a hash map adn then we want a value for a particualr key in O(1) or 0(linkedlist) time//
+    public V get(K key){
+
     }
 
     public V remove(K key){
@@ -109,6 +114,7 @@ class Map <K,V>{
             bucketArray.set(bucketIndex,newNode);
 
         }
+
 
     }
 
