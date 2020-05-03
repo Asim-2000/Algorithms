@@ -145,11 +145,17 @@ class Map <K,V>{
                     add(headNode.key,headNode.value);
                     headNode=headNode.next;
                 }
+
               }
-                }
+
+            }
                 
         }
 
-
+public static void main (String[] args){
+    Map map=new Map();
+    map.add(5,6);
+    System.out.println(map.get(5));
+}
     }
 
