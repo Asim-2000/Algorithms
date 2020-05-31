@@ -1,7 +1,7 @@
 public class QuickFind{
     private int [] id;
 
-    public void QuickFindUF(int N){
+    public QuickFind(int N){
         id = new int[N];
         for (int i=0;i<N;i++){
             id[i]=i;
@@ -21,7 +21,12 @@ public class QuickFind{
             }
         }
     }
-
+    public static void main(String[] args){
+        QuickFind F =new QuickFind(10);
+        F.Union(5,6);
+        F.Union(7,8);
+        System.out.println(F.Connected(5,6));
+    }
 
 
 }
