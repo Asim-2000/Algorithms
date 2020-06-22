@@ -152,8 +152,8 @@ public static void main (String[] args){
     Map map=new Map();
     map.add("Asim",99);
     System.out.println(map.get("Asim"));
-    map.add("Alina",99.9);
-    System.out.println(map.get("Alina"));
+    map.add("Muhammad",99.9);
+    System.out.println(map.get("Muhammad"));
 
 }
     }
